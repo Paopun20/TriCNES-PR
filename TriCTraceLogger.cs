@@ -40,7 +40,14 @@ namespace TriCNES
                 {
                     rtb_TraceLog.Text = Log;
                 };
-                this.BeginInvoke(upd);
+                try
+                {
+                    this.Invoke(upd);
+                }
+                catch (Exception e)
+                {
+
+                }
             }
         }
 
@@ -79,6 +86,11 @@ namespace TriCNES
         public bool ClearEveryFrame()
         {
             return cb_ClearEveryFrame.Checked;
+        }
+
+        public bool LogPPUCycles()
+        {
+            return cb_LogPPU.Checked;
         }
     }
 }

@@ -38,6 +38,8 @@ namespace TriCNES
             this.resetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.powerCycleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.screenshotToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveStateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.loadStateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tASToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loadTASToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.load3ctToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -66,9 +68,9 @@ namespace TriCNES
             this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.traceLoggerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nametableViewerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tASTimelineToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pb_Screen = new TriCNES.PictureBoxWithInterpolationMode();
-            this.saveStateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.loadStateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.hexEditorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_Screen)).BeginInit();
             this.SuspendLayout();
@@ -102,30 +104,44 @@ namespace TriCNES
             // loadROMToolStripMenuItem
             // 
             this.loadROMToolStripMenuItem.Name = "loadROMToolStripMenuItem";
-            this.loadROMToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.loadROMToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.loadROMToolStripMenuItem.Text = "Load ROM";
             this.loadROMToolStripMenuItem.Click += new System.EventHandler(this.loadROMToolStripMenuItem_Click);
             // 
             // resetToolStripMenuItem
             // 
             this.resetToolStripMenuItem.Name = "resetToolStripMenuItem";
-            this.resetToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.resetToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.resetToolStripMenuItem.Text = "Reset";
             this.resetToolStripMenuItem.Click += new System.EventHandler(this.resetToolStripMenuItem_Click);
             // 
             // powerCycleToolStripMenuItem
             // 
             this.powerCycleToolStripMenuItem.Name = "powerCycleToolStripMenuItem";
-            this.powerCycleToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.powerCycleToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.powerCycleToolStripMenuItem.Text = "Power Cycle";
             this.powerCycleToolStripMenuItem.Click += new System.EventHandler(this.powerCycleToolStripMenuItem_Click);
             // 
             // screenshotToolStripMenuItem
             // 
             this.screenshotToolStripMenuItem.Name = "screenshotToolStripMenuItem";
-            this.screenshotToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.screenshotToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.screenshotToolStripMenuItem.Text = "Screenshot";
             this.screenshotToolStripMenuItem.Click += new System.EventHandler(this.screenshotToolStripMenuItem_Click);
+            // 
+            // saveStateToolStripMenuItem
+            // 
+            this.saveStateToolStripMenuItem.Name = "saveStateToolStripMenuItem";
+            this.saveStateToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.saveStateToolStripMenuItem.Text = "Save State";
+            this.saveStateToolStripMenuItem.Click += new System.EventHandler(this.saveStateToolStripMenuItem_Click);
+            // 
+            // loadStateToolStripMenuItem
+            // 
+            this.loadStateToolStripMenuItem.Name = "loadStateToolStripMenuItem";
+            this.loadStateToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.loadStateToolStripMenuItem.Text = "Load State";
+            this.loadStateToolStripMenuItem.Click += new System.EventHandler(this.loadStateToolStripMenuItem_Click);
             // 
             // tASToolStripMenuItem
             // 
@@ -139,14 +155,14 @@ namespace TriCNES
             // loadTASToolStripMenuItem
             // 
             this.loadTASToolStripMenuItem.Name = "loadTASToolStripMenuItem";
-            this.loadTASToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.loadTASToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
             this.loadTASToolStripMenuItem.Text = "Load TAS";
             this.loadTASToolStripMenuItem.Click += new System.EventHandler(this.loadTASToolStripMenuItem_Click);
             // 
             // load3ctToolStripMenuItem
             // 
             this.load3ctToolStripMenuItem.Name = "load3ctToolStripMenuItem";
-            this.load3ctToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.load3ctToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
             this.load3ctToolStripMenuItem.Text = "Load .3ct TAS";
             this.load3ctToolStripMenuItem.Click += new System.EventHandler(this.load3ctToolStripMenuItem_Click);
             // 
@@ -339,7 +355,9 @@ namespace TriCNES
             // 
             this.toolsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.traceLoggerToolStripMenuItem,
-            this.nametableViewerToolStripMenuItem});
+            this.nametableViewerToolStripMenuItem,
+            this.tASTimelineToolStripMenuItem,
+            this.hexEditorToolStripMenuItem});
             this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
             this.toolsToolStripMenuItem.Size = new System.Drawing.Size(46, 20);
             this.toolsToolStripMenuItem.Text = "Tools";
@@ -347,16 +365,23 @@ namespace TriCNES
             // traceLoggerToolStripMenuItem
             // 
             this.traceLoggerToolStripMenuItem.Name = "traceLoggerToolStripMenuItem";
-            this.traceLoggerToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
+            this.traceLoggerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.traceLoggerToolStripMenuItem.Text = "TraceLogger";
             this.traceLoggerToolStripMenuItem.Click += new System.EventHandler(this.traceLoggerToolStripMenuItem_Click);
             // 
             // nametableViewerToolStripMenuItem
             // 
             this.nametableViewerToolStripMenuItem.Name = "nametableViewerToolStripMenuItem";
-            this.nametableViewerToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
+            this.nametableViewerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.nametableViewerToolStripMenuItem.Text = "Nametable Viewer";
             this.nametableViewerToolStripMenuItem.Click += new System.EventHandler(this.nametableViewerToolStripMenuItem_Click);
+            // 
+            // tASTimelineToolStripMenuItem
+            // 
+            this.tASTimelineToolStripMenuItem.Name = "tASTimelineToolStripMenuItem";
+            this.tASTimelineToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.tASTimelineToolStripMenuItem.Text = "TAS Timeline";
+            this.tASTimelineToolStripMenuItem.Click += new System.EventHandler(this.tASTimelineToolStripMenuItem_Click);
             // 
             // pb_Screen
             // 
@@ -370,19 +395,12 @@ namespace TriCNES
             this.pb_Screen.TabIndex = 1;
             this.pb_Screen.TabStop = false;
             // 
-            // saveStateToolStripMenuItem
+            // hexEditorToolStripMenuItem
             // 
-            this.saveStateToolStripMenuItem.Name = "saveStateToolStripMenuItem";
-            this.saveStateToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.saveStateToolStripMenuItem.Text = "Save State";
-            this.saveStateToolStripMenuItem.Click += new System.EventHandler(this.saveStateToolStripMenuItem_Click);
-            // 
-            // loadStateToolStripMenuItem
-            // 
-            this.loadStateToolStripMenuItem.Name = "loadStateToolStripMenuItem";
-            this.loadStateToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.loadStateToolStripMenuItem.Text = "Load State";
-            this.loadStateToolStripMenuItem.Click += new System.EventHandler(this.loadStateToolStripMenuItem_Click);
+            this.hexEditorToolStripMenuItem.Name = "hexEditorToolStripMenuItem";
+            this.hexEditorToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.hexEditorToolStripMenuItem.Text = "Hex Editor";
+            this.hexEditorToolStripMenuItem.Click += new System.EventHandler(this.hexEditorToolStripMenuItem_Click);
             // 
             // TriCNESGUI
             // 
@@ -452,6 +470,8 @@ namespace TriCNES
         private ToolStripMenuItem showRawSignalsToolStripMenuItem;
         private ToolStripMenuItem saveStateToolStripMenuItem;
         private ToolStripMenuItem loadStateToolStripMenuItem;
+        private ToolStripMenuItem tASTimelineToolStripMenuItem;
+        private ToolStripMenuItem hexEditorToolStripMenuItem;
     }
 }
 
